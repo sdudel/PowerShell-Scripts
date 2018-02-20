@@ -1,4 +1,4 @@
-﻿#requires -Module ActiveDirectory
+#requires -Module ActiveDirectory
 
 <#
         .SYNOPSIS
@@ -10,10 +10,10 @@
         .NOTES
         Filename: Get-AdGroupMembershipChange.ps1
         .EXAMPLE
-        PS> .\Get-AdGroupMembershipChange.ps1 -Group 'Enterprise Admins','Domain Admins','Schema Admins' -Email abertram@lab.local
+        PS> .\Get-AdGroupMembershipChange.ps1 -Group 'Enterprise Admins','Domain Admins','Schema Admins' -Email admin@contoso.com
 	
         This example will query group memberships of the Enterprise Admins, Domain Admins and Schema Admins groups and email
-        abertram@lab.local when a member is either added or removed from any of these groups.
+        admin@contoso.com when a member is either added or removed from any of these groups.
 
         .PARAMETER Group
         One or more group names to monitor for membership changes
@@ -101,10 +101,10 @@ begin {
         "
         
         $Params = @{
-            'From' = 'Active Directory Administrator <admin@mycompany.com>'
+            'From' = 'Active Directory Administrator <admin@contoso.com>'
             'To' = $Email
             'Subject' = 'AD Group Change'
-            'SmtpServer' = 'my.smptpserver.local'
+            'SmtpServer' = ‘SMTP FQDN Local’
             'Body' = $EmailBody
         }
         Send-MailMessage @Params
