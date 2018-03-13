@@ -5,8 +5,8 @@
         This script queries multiple Active Directory groups for new members in a domain.  It records group membership
         in a CSV file in the same location as the script is located. On the script's initial run it will simply record
         all members of all groups into this CSV file.  On subsequent runs it will query each group's member list and compare
-        that list to what's in the CSV file.  If any differences are found (added or removed) the script will update the 
-        CSV file to reflect current memberships and notify an administrator of which members were either added or removed.
+        that list to what's in the CSV file.  Any differences are found (added or removed) the script will update the 
+        CSV file to reflect current memberships + notify an admin on members added/removed.
         .NOTES
         Filename: Get-AdGroupMembershipChange.ps1
         .EXAMPLE
